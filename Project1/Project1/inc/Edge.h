@@ -1,7 +1,13 @@
 #pragma once
 #include <iostream>
+#include <cstdlib>
+#include <list>
+
+using namespace std;
+
 class Edge {
-public:
+
+	public:
 	// Default constructor to create an edge with no data.
 	Edge();
 
@@ -14,6 +20,10 @@ public:
 	int first();
 
 	/*Member function to return the integer representation
+	of the second incident vertex*/
+	int second();
+	
+	/*Member function to return the integer representation
 	of the second incident vertex.*/
 	int edgeWeight();
 
@@ -21,12 +31,14 @@ public:
 	void operator= (Edge rhs);
 
 	//Overloaded less than or equal to operator
-	bool operator<=(Edge rhEdge);
-private:
+	bool operator<=(Edge rh_edge);
+
+	private:
 	struct AnEdge {
 		int v1;
 		int v2;
 		int weight;
 	};
+	
 	AnEdge theEdge;
 };
